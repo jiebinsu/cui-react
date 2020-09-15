@@ -1,0 +1,122 @@
+{
+  "name": "@coopdigital/cui-react",
+  "version": "0.0.1",
+  "description": "Coop Design System - React UI Library",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jiebinsu/cui-react"
+  },
+  "license": "ISC",
+  "author": {
+    "name": "Jiebin Su"
+  },
+  "main": "dist/index.js",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build:docs": "build-storybook --docs",
+    "build:package": "NODE_ENV=production BABEL_ENV=production rollup -c",
+    "build:storybook": "build-storybook",
+    "lint": "yarn lint:js && yarn lint:package",
+    "lint:js": "cross-env NODE_ENV=production eslint --cache --cache-location=.cache/eslint --ext .js,.jsx,.html,.ts,.tsx,.mjs --report-unused-disable-directives",
+    "lint:package": "sort-package-json",
+    "storybook": "start-storybook -p 6006",
+    "test": "jest",
+    "test:watch": "jest --verbose --watch"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.html": [
+      "yarn lint:js --fix"
+    ],
+    "*.js": [
+      "yarn lint:js --fix"
+    ],
+    "package.json": [
+      "yarn lint:package"
+    ]
+  },
+  "dependencies": {
+    "@coopdigital/foundations-buttons": "^2.2.0",
+    "@coopdigital/foundations-forms": "^4.0.8",
+    "@coopdigital/foundations-global": "^3.1.11",
+    "@coopdigital/foundations-grid": "^2.0.6",
+    "@coopdigital/foundations-layout": "^3.1.11",
+    "@coopdigital/foundations-typography": "^4.1.11",
+    "@coopdigital/foundations-vars": "^3.1.5",
+    "identity-obj-proxy": "^3.0.0",
+    "prop-types": "^15.5.4",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "uuid": "^3.3.3"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.10.1",
+    "@babel/core": "^7.10.2",
+    "@babel/node": "^7.10.1",
+    "@babel/plugin-proposal-object-rest-spread": "^7.10.1",
+    "@babel/plugin-transform-runtime": "^7.10.1",
+    "@babel/preset-env": "^7.10.2",
+    "@babel/preset-react": "^7.10.1",
+    "@babel/preset-typescript": "^7.10.1",
+    "@mdx-js/loader": "^1.6.16",
+    "@rollup/plugin-commonjs": "^15.0.0",
+    "@rollup/plugin-node-resolve": "^9.0.0",
+    "@rollup/plugin-url": "^5.0.1",
+    "@storybook/addon-a11y": "6.0.21",
+    "@storybook/addon-actions": "6.0.21",
+    "@storybook/addon-docs": "6.0.21",
+    "@storybook/addon-essentials": "6.0.21",
+    "@storybook/addon-storysource": "6.0.21",
+    "@storybook/eslint-config-storybook": "^2.4.0",
+    "@storybook/linter-config": "^2.5.0",
+    "@storybook/react": "6.0.21",
+    "@storybook/theming": "^6.0.21",
+    "@testing-library/react": "^11.0.4",
+    "@types/fs-extra": "^9.0.1",
+    "@types/styled-components": "^5.1.0",
+    "auto": "^9.50.1",
+    "babel-eslint": "^10.1.0",
+    "babel-jest": "^26.3.0",
+    "babel-loader": "^8.1.0",
+    "babel-plugin-react-docgen": "^4.1.0",
+    "babel-plugin-styled-components": "^1.10.7",
+    "babel-plugin-transform-react-remove-prop-types": "^0.4.24",
+    "babel-preset-react-app": "^9.1.2",
+    "chromatic": "^5.0.0",
+    "cross-env": "^7.0.2",
+    "css-loader": "^4.2.2",
+    "dotenv-cli": "^3.1.0",
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.4",
+    "eslint": "^7.1.0",
+    "husky": "^4.2.5",
+    "jest": "^26.4.2",
+    "lint-staged": "^10.2.9",
+    "node-sass": "^4.14.1",
+    "prettier": "^2.0.5",
+    "react-test-renderer": "^16.13.1",
+    "rollup": "^2.26.11",
+    "rollup-plugin-babel": "^4.4.0",
+    "rollup-plugin-peer-deps-external": "^2.2.3",
+    "rollup-plugin-postcss": "^3.1.8",
+    "rollup-plugin-terser": "^7.0.2",
+    "sass-loader": "^10.0.1",
+    "sort-package-json": "^1.44.0",
+    "style-loader": "^1.2.1",
+    "ts-loader": "^7.0.5",
+    "typescript": "^3.9.5",
+    "url-loader": "^4.1.0",
+    "webpack": "^4.44.1",
+    "webpack-cli": "^3.3.12"
+  },
+  "peerDependencies": {
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0"
+  }
+}
