@@ -27,3 +27,4 @@ reports
 
 # we use yarn
 package-lock.json
+.npmrc

@@ -3,7 +3,7 @@ import InputRadioGroup from "./InputRadioGroup";
 import InputRadio from "../InputRadio";
 
 export default {
-  title: "Coop UI/InputRadioGroup",
+  title: "Base/InputRadioGroup",
   component: InputRadioGroup,
 };
 

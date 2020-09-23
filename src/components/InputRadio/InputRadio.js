@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 import { useRadioContext } from "../InputRadioGroup/InputRadioGroupContext";
 import classNames from "../../utils/classNames";
-import "@coopdigital/foundations-forms/dist/forms.css";
+import "./inputRadio.scss";
 
 const InputRadio = ({
   id,

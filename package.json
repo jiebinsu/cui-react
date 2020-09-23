@@ -12,12 +12,15 @@
   },
   "main": "dist/index.js",
   "files": [
-    "dist"
+    "dist",
+    "README.md"
   ],
   "scripts": {
     "build:docs": "build-storybook --docs",
-    "build:package": "NODE_ENV=production BABEL_ENV=production rollup -c",
+    "build:package": "yarn clean && cross-env BABEL_ENV=production babel src -d dist && yarn css:package",
     "build:storybook": "build-storybook",
+    "clean": "rm -rf dist",
+    "css:package": "./scripts/package.sh",
     "lint": "yarn lint:js && yarn lint:package",
     "lint:js": "cross-env NODE_ENV=production eslint --cache --cache-location=.cache/eslint --ext .js,.jsx,.html,.ts,.tsx,.mjs --report-unused-disable-directives",
     "lint:package": "sort-package-json",
@@ -42,6 +45,7 @@
     ]
   },
   "dependencies": {
+    "@coopdigital/css-foundations": "^5.3.1",
     "@coopdigital/foundations-buttons": "^2.2.0",
     "@coopdigital/foundations-forms": "^4.0.8",
     "@coopdigital/foundations-global": "^3.1.11",
@@ -50,6 +54,7 @@
     "@coopdigital/foundations-typography": "^4.1.11",
     "@coopdigital/foundations-vars": "^3.1.5",
     "identity-obj-proxy": "^3.0.0",
+    "lint-staged": "^10.4.0",
     "prop-types": "^15.5.4",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
@@ -87,6 +92,7 @@
     "babel-plugin-react-docgen": "^4.1.0",
     "babel-plugin-styled-components": "^1.10.7",
     "babel-plugin-transform-react-remove-prop-types": "^0.4.24",
+    "babel-plugin-transform-remove-imports": "^1.4.1",
     "babel-preset-react-app": "^9.1.2",
     "chromatic": "^5.0.0",
     "cross-env": "^7.0.2",
@@ -97,14 +103,13 @@
     "eslint": "^7.1.0",
     "husky": "^4.2.5",
     "jest": "^26.4.2",
-    "lint-staged": "^10.2.9",
     "node-sass": "^4.14.1",
     "prettier": "^2.0.5",
     "react-test-renderer": "^16.13.1",
     "rollup": "^2.26.11",
     "rollup-plugin-babel": "^4.4.0",
     "rollup-plugin-peer-deps-external": "^2.2.3",
-    "rollup-plugin-postcss": "^3.1.8",
+    "rollup-plugin-styles": "^3.10.0",
     "rollup-plugin-terser": "^7.0.2",
     "sass-loader": "^10.0.1",
     "sort-package-json": "^1.44.0",

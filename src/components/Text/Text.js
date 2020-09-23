@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
-import "@coopdigital/foundations-typography/dist/typography.css";
+import classNames from "../../utils/classNames";
+import "./text.scss";
 
 const variantList = {
   mega: "coop-t-h-mega",
@@ -12,11 +13,7 @@ const variantList = {
 
 const Text = ({ className, variant, type, href, children, ...props }) => {
   const TagName = type;
-  const variantClassName = variantList[variant]
-    ? className
-      ? `${variantList[variant]} ${className}`
-      : variantList[variant]
-    : className;
+  const variantClassName = classNames(variantList[variant], [className]);
 
   const tagAttributes = {
     className: variantClassName,

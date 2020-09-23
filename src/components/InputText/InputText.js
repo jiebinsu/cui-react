@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import "@coopdigital/foundations-forms/dist/forms.css";
+import "./inputText.scss";
 
 const InputText = ({
   id,

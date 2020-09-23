@@ -2,7 +2,7 @@ import React from "react";
 import Text from "./Text";
 
 export default {
-  title: "Coop UI/Text",
+  title: "Base/Text",
   component: Text,
 };
 

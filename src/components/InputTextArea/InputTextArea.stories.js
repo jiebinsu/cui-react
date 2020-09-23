@@ -2,7 +2,7 @@ import React from "react";
 import InputTextArea from "./InputTextArea";
 
 export default {
-  title: "Coop UI/InputTextArea",
+  title: "Base/InputTextArea",
   component: InputTextArea,
 };
 

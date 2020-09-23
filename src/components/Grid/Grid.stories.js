@@ -1,9 +1,9 @@
 import React from "react";
 import Grid from "./index";
-import GridItem from "./GridItem";
+import GridItem from "../GridItem";
 
 export default {
-  title: "Coop UI/Grid",
+  title: "Base/Grid",
   component: Grid,
 };
 

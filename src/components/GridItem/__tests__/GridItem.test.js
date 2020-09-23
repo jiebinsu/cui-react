@@ -1,7 +1,7 @@
 import React from "react";
 import { mount } from "enzyme";
 import renderer from "react-test-renderer";
-import GridItem from "../GridItem";
+import GridItem from "../index";
 
 describe("GridItem", () => {
   it("should render correctly", () => {

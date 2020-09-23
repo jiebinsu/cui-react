@@ -2,7 +2,7 @@ import React from "react";
 import InputRadio from "./InputRadio";
 
 export default {
-  title: "Coop UI/InputRadio",
+  title: "Base/InputRadio",
   component: InputRadio,
 };
 

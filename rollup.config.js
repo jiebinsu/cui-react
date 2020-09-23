@@ -1,8 +1,8 @@
 import { DEFAULT_EXTENSIONS } from "@babel/core";
 import babel from "rollup-plugin-babel";
+import styles from "rollup-plugin-styles";
 import commonjs from "@rollup/plugin-commonjs";
 import external from "rollup-plugin-peer-deps-external";
-import postcss from "rollup-plugin-postcss";
 import resolve from "@rollup/plugin-node-resolve";
 import url from "@rollup/plugin-url";
 import { terser } from "rollup-plugin-terser";
@@ -16,13 +16,12 @@ export default {
       file: pkg.main,
       format: "cjs",
       sourcemap: "inline",
+      assetFileNames: "[name][extname]",
     },
   ],
   plugins: [
-    postcss({
-      plugins: [],
-      minimize: true,
-      sourceMap: "inline",
+    styles({
+      mode: ["extract", "cui-styles.css"],
     }),
     external({
       includeDependencies: true,

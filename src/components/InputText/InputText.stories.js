@@ -2,7 +2,7 @@ import React from "react";
 import InputText from "./InputText";
 
 export default {
-  title: "Coop UI/InputText",
+  title: "Base/InputText",
   component: InputText,
 };
 

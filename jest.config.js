@@ -1,5 +1,6 @@
 module.exports = {
   collectCoverageFrom: ["src/**/*.{js,jsx,ts,tsx}"],
+  coveragePathIgnorePatterns: ["^.+\\.stories\\.(js|jsx|ts|tsx)$"],
   coverageDirectory: "reports",
   setupFilesAfterEnv: ["<rootDir>/.jest/setupTests.js"],
   testMatch: [
