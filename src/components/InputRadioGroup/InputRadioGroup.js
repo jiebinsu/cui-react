@@ -21,7 +21,6 @@ const InputRadioGroup = ({
   const updateState = (nextValue) => {
     setChecked(nextValue);
     if (onChange) onChange(nextValue);
-    console.log("checked", checked);
   };
 
   const providerValue = {

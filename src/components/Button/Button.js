@@ -14,20 +14,20 @@ const Button = ({
   children,
   ...props
 }) => {
-  const dynamicClasses = classNames("coop-btn", [
+  const classes = classNames("coop-btn", [
     variant && `coop-btn--${variant}`,
     fullWidth && "coop-btn--full-width",
     isLoading && "coop-btn--loading",
     size === "small" && "coop-btn--small",
   ]);
 
-  const classes = variant === "link" ? "coop-t-link" : dynamicClasses;
+  const tagAttributes = {
+    className: classes,
+    type,
+    ...props,
+  };
 
-  return (
-    <button {...props} className={classes}>
-      {children}
-    </button>
-  );
+  return <button {...tagAttributes}>{children}</button>;
 };
 
 Button.defaultProps = {
@@ -43,7 +43,7 @@ Button.defaultProps = {
 
 Button.propTypes = {
   className: PropTypes.string,
-  variant: PropTypes.oneOf(["primary", "white", "grey", "link"]),
+  variant: PropTypes.oneOf(["primary", "white", "grey"]),
   type: PropTypes.oneOf(["button", "submit", "reset"]),
   size: PropTypes.oneOf(["small", "medium"]),
   disabled: PropTypes.bool,

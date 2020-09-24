@@ -16,7 +16,6 @@ describe("Button", () => {
         <Button variant="primary">Primary</Button>
         <Button variant="white">White</Button>
         <Button variant="grey">Grey</Button>
-        <Button variant="link">Link</Button>
       </div>
     );
 
