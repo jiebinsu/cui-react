@@ -1,5 +1,6 @@
 import React, { useState, useEffect, forwardRef } from "react";
 import PropTypes from "prop-types";
+import uuid from "uuid";
 import { useRadioContext } from "../InputRadioGroup/InputRadioGroupContext";
 import classNames from "../../utils/classNames";
 import "./inputRadio.scss";
@@ -84,6 +85,7 @@ const InputRadio = forwardRef(
 );
 
 InputRadio.defaultProps = {
+  id: uuid(),
   disabled: false,
   className: null,
   checked: null,
@@ -91,7 +93,7 @@ InputRadio.defaultProps = {
 };
 
 InputRadio.propTypes = {
-  id: PropTypes.string.isRequired,
+  id: PropTypes.string,
   name: PropTypes.string.isRequired,
   label: PropTypes.string.isRequired,
   value: PropTypes.oneOfType([PropTypes.number, PropTypes.string]).isRequired,

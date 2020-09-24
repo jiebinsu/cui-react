@@ -1,5 +1,6 @@
 import React, { forwardRef } from "react";
 import PropTypes from "prop-types";
+import uuid from "uuid";
 import classNames from "../../utils/classNames";
 import "./inputText.scss";
 
@@ -67,6 +68,7 @@ const InputText = forwardRef(
 );
 
 InputText.defaultProps = {
+  id: uuid(),
   type: "text",
   disabled: false,
   hasError: false,
@@ -79,7 +81,7 @@ InputText.defaultProps = {
 };
 
 InputText.propTypes = {
-  id: PropTypes.string.isRequired,
+  id: PropTypes.string,
   name: PropTypes.string.isRequired,
   type: PropTypes.oneOf(["text", "hidden"]),
   className: PropTypes.string,

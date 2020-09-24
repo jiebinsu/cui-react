@@ -11,7 +11,7 @@ const variantList = {
   bold: "coop-t-bold",
 };
 
-const Text = ({ className, variant, type, href, children, ...props }) => {
+const Text = ({ className, variant, type, children, ...props }) => {
   const TagName = type;
   const variantClassName = classNames(variantList[variant], [className]);
 
@@ -20,11 +20,6 @@ const Text = ({ className, variant, type, href, children, ...props }) => {
     ...props,
   };
 
-  if (type === "a") {
-    const linkHref = href || tagAttributes.href;
-    tagAttributes.href = linkHref;
-  }
-
   return <TagName {...tagAttributes}>{children}</TagName>;
 };
 
@@ -32,15 +27,13 @@ Text.defaultProps = {
   type: "p",
   variant: "regular",
   className: null,
-  href: null,
   children: null,
 };
 
 Text.propTypes = {
   className: PropTypes.string,
   variant: PropTypes.oneOf(Object.keys(variantList)),
-  type: PropTypes.oneOf(["h1", "h2", "h3", "h4", "h5", "h6", "p", "a"]),
-  href: PropTypes.string,
+  type: PropTypes.oneOf(["h1", "h2", "h3", "h4", "h5", "h6", "p"]),
   children: PropTypes.node,
 };
 

@@ -11,6 +11,7 @@ module.exports = (api) => {
     plugins: [
       "@babel/plugin-proposal-object-rest-spread",
       "@babel/transform-runtime",
+      "react-docgen",
     ],
   };
 

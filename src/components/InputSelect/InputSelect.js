@@ -1,5 +1,6 @@
 import React, { forwardRef } from "react";
 import PropTypes from "prop-types";
+import uuid from "uuid";
 import classNames from "../../utils/classNames";
 
 const InputSelect = forwardRef(
@@ -67,6 +68,7 @@ const InputSelect = forwardRef(
 );
 
 InputSelect.defaultProps = {
+  id: uuid(),
   className: null,
   label: null,
   hint: null,
@@ -78,7 +80,7 @@ InputSelect.defaultProps = {
 };
 
 InputSelect.propTypes = {
-  id: PropTypes.string.isRequired,
+  id: PropTypes.string,
   name: PropTypes.string.isRequired,
   className: PropTypes.string,
   label: PropTypes.string,
