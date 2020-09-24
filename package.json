@@ -17,7 +17,7 @@
   ],
   "scripts": {
     "build:docs": "build-storybook --docs",
-    "build:package": "yarn clean && cross-env BABEL_ENV=production babel src -d dist && yarn css:package",
+    "build:package": "yarn clean && cross-env BABEL_ENV=production babel src -d dist",
     "build:storybook": "build-storybook",
     "clean": "rm -rf dist",
     "css:package": "./scripts/package.sh",

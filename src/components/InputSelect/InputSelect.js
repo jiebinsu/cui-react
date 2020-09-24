@@ -12,10 +12,12 @@ const InputSelect = ({
   errorMsg,
   options,
   placeholder,
+  width,
   ...props
 }) => {
   const classes = classNames("coop-form__field coop-form__select", [
     hasError && "coop-form__invalid",
+    width && `coop-form__input--width-${width}`,
     className,
   ]);
 
@@ -66,6 +68,7 @@ InputSelect.defaultProps = {
   errorMsg: null,
   options: [],
   placeholder: null,
+  width: null,
 };
 
 InputSelect.propTypes = {
@@ -83,6 +86,7 @@ InputSelect.propTypes = {
     })
   ),
   placeholder: PropTypes.string,
+  width: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
 };
 
 export default InputSelect;

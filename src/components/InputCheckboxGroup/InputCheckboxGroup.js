@@ -1,59 +1,56 @@
 import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
-import { RadioContext } from "./InputRadioGroupContext";
-import "./inputRadioGroup.scss";
+import { CheckboxContext } from "./InputCheckboxGroupContext";
+import "./inputCheckboxGroup.scss";
+import classNames from "../../utils/classNames";
 
-const InputRadioGroup = ({
+const InputCheckboxGroup = ({
   id,
   legend,
   hint,
   hasError,
   errorMsg,
   className,
-  initialValue,
   value,
   children,
   onChange,
   ...props
 }) => {
-  const [checked, setChecked] = useState(initialValue);
+  const [selfVal, setSelfVal] = useState(value);
 
-  const updateState = (nextValue) => {
-    setChecked(nextValue);
-    if (onChange) onChange(nextValue);
-    console.log("checked", checked);
-  };
-
-  const providerValue = {
-    updateState,
-    currentState: checked,
-    inGroup: true,
+  const updateState = (val, checked) => {
+    const removed = selfVal.filter((v) => v !== val);
+    const next = checked ? [...removed, val] : removed;
+    setSelfVal(next);
+    if (onChange) onChange(next);
   };
 
   useEffect(() => {
-    if (value === undefined) return;
-    setChecked(value);
-  }, [value]);
+    setSelfVal(value);
+  }, [value.join(",")]);
+
+  const providerValue = {
+    updateState,
+    values: selfVal,
+    inGroup: true,
+  };
 
   const hintId = `${id}-hint`;
   const errorId = `${id}-error`;
-  const classNames = ["coop-c-form-choice"];
+  const classes = classNames("coop-c-form-choice", [
+    hasError && "coop-form__invalid",
+    className,
+  ]);
+
   const ariaDescribedBy = [];
-
   if (hint) ariaDescribedBy.push(hintId);
-
-  if (hasError) {
-    classNames.push("coop-form__invalid");
-    ariaDescribedBy.push(errorId);
-  }
-
-  classNames.push(className);
+  if (hasError) ariaDescribedBy.push(errorId);
 
   return (
-    <RadioContext.Provider value={providerValue}>
+    <CheckboxContext.Provider value={providerValue}>
       <div className="coop-form__row">
         <fieldset
-          className={classNames.join(" ")}
+          className={classes}
           aria-describedby={ariaDescribedBy && ariaDescribedBy.join(" ")}
           {...props}
         >
@@ -73,24 +70,23 @@ const InputRadioGroup = ({
           {children}
         </fieldset>
       </div>
-    </RadioContext.Provider>
+    </CheckboxContext.Provider>
   );
 };
 
-export default InputRadioGroup;
+export default InputCheckboxGroup;
 
-InputRadioGroup.defaultProps = {
+InputCheckboxGroup.defaultProps = {
   hasError: false,
   hint: null,
   errorMsg: null,
   children: null,
   className: null,
-  initialValue: null,
-  value: null,
+  value: [],
   onChange: null,
 };
 
-InputRadioGroup.propTypes = {
+InputCheckboxGroup.propTypes = {
   id: PropTypes.string.isRequired,
   legend: PropTypes.string.isRequired,
   hint: PropTypes.string,
@@ -98,7 +94,8 @@ InputRadioGroup.propTypes = {
   errorMsg: PropTypes.string,
   children: PropTypes.node,
   className: PropTypes.string,
-  initialValue: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
-  value: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+  value: PropTypes.arrayOf(
+    PropTypes.oneOfType([PropTypes.string, PropTypes.number])
+  ),
   onChange: PropTypes.func,
 };

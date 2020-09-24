@@ -14,7 +14,14 @@ Basic.args = {
 
 export const All = () => (
   <>
+    <InputText id="label" name="label" />
     <InputText id="label" name="label" label="Input with label" />
+    <InputText
+      id="label"
+      name="label"
+      label="Input with label and set width"
+      width={10}
+    />
     <InputText id="label" name="label" hint="Input with hint" />
     <InputText
       id="label"
@@ -33,6 +40,14 @@ export const WithError = () => (
       label="Input with label"
       errorMsg="Error message"
       hasError
+    />
+    <InputText
+      id="label"
+      name="label"
+      label="Input with label and set width"
+      errorMsg="Error message"
+      hasError
+      width={10}
     />
     <InputText
       id="label"

@@ -7,7 +7,6 @@ import "./inputRadio.scss";
 const InputRadio = ({
   id,
   name,
-  value,
   className,
   label,
   checked,
@@ -49,7 +48,7 @@ const InputRadio = ({
 
   useEffect(() => {
     if (checked === undefined) return;
-    setSelfChecked(Boolean(checked));
+    setSelfChecked(!!checked);
   }, [checked]);
 
   const tagAttributes = {

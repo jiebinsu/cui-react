@@ -6,18 +6,16 @@ export default {
   component: InputDOB,
 };
 
-export const Basic = (args) => <InputDOB {...args} />;
-Basic.args = {
-  id: "basic",
-  name: "basic",
-  label: "Date of Birth",
-};
+export const Basic = () => (
+  <InputDOB id="basic" name="basic" label="Date of Birth" />
+);
 
 const errors = {
   day: "The day you entered is invalid",
   month: "The month you entered is invalid",
   year: "The year you entered is invalid",
 };
+
 export const WithError = () => (
   <InputDOB
     id="withError"

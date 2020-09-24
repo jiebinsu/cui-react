@@ -36,6 +36,7 @@ export const All = () => {
   return (
     <>
       <InputSelect id="id" name="name" options={options} />
+      <InputSelect id="id" name="name" options={options} width={10} />
       <InputSelect
         id="id"
         name="name"
@@ -74,6 +75,14 @@ export const WithError = () => {
         hasError
         errorMsg="Error Message"
         options={options}
+      />
+      <InputSelect
+        id="id"
+        name="name"
+        hasError
+        errorMsg="Error Message"
+        options={options}
+        width={10}
       />
       <InputSelect
         id="id"

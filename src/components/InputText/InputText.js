@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+import classNames from "../../utils/classNames";
 import "./inputText.scss";
 
 const InputText = ({
@@ -13,21 +14,20 @@ const InputText = ({
   errorMsg,
   disabled,
   placeholder,
+  width,
   ...props
 }) => {
   const hintId = `${id}-hint`;
   const errorId = `${id}-error`;
-  const classNames = ["coop-form__field", "coop-form__input"];
+  const classes = classNames("coop-form__field coop-form__input", [
+    hasError && "coop-form__invalid",
+    width && `coop-form__input--width-${width}`,
+    className,
+  ]);
+
   const ariaDescribedBy = [];
-
   if (hint) ariaDescribedBy.push(hintId);
-
-  if (hasError) {
-    classNames.push("coop-form__invalid");
-    ariaDescribedBy.push(errorId);
-  }
-
-  classNames.push(className);
+  if (hasError) ariaDescribedBy.push(errorId);
 
   return (
     <div className="coop-form__row">
@@ -50,7 +50,7 @@ const InputText = ({
         type={type}
         name={name}
         id={id}
-        className={classNames.join(" ")}
+        className={classes}
         aria-describedby={ariaDescribedBy && ariaDescribedBy.join(" ")}
         disabled={disabled}
         placeholder={placeholder}
@@ -71,12 +71,13 @@ InputText.defaultProps = {
   label: null,
   errorMsg: null,
   placeholder: null,
+  width: null,
 };
 
 InputText.propTypes = {
   id: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
-  type: PropTypes.oneOf(["text"]),
+  type: PropTypes.oneOf(["text", "hidden"]),
   className: PropTypes.string,
   label: PropTypes.string,
   hint: PropTypes.string,
@@ -84,4 +85,5 @@ InputText.propTypes = {
   errorMsg: PropTypes.string,
   disabled: PropTypes.bool,
   placeholder: PropTypes.string,
+  width: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
 };
