@@ -1,6 +1,6 @@
 {
   "name": "@coopdigital/cui-react",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Coop Design System - React UI Library",
   "repository": {
     "type": "git",
@@ -17,7 +17,7 @@
   ],
   "scripts": {
     "build:docs": "build-storybook --docs",
-    "build:package": "yarn clean && cross-env BABEL_ENV=production babel src -d dist",
+    "build:package": "yarn clean && yarn webpack && cross-env BABEL_ENV=production babel src -d dist",
     "build:storybook": "build-storybook",
     "clean": "rm -rf dist",
     "css:package": "./scripts/package.sh",
@@ -26,7 +26,8 @@
     "lint:package": "sort-package-json",
     "storybook": "start-storybook -p 6006",
     "test": "jest",
-    "test:watch": "jest --verbose --watch"
+    "test:watch": "jest --verbose --watch",
+    "webpack": "webpack"
   },
   "husky": {
     "hooks": {
@@ -102,7 +103,9 @@
     "eslint": "^7.1.0",
     "husky": "^4.2.5",
     "jest": "^26.4.2",
+    "mini-css-extract-plugin": "^0.11.2",
     "node-sass": "^4.14.1",
+    "optimize-css-assets-webpack-plugin": "^5.0.4",
     "prettier": "^2.0.5",
     "react-test-renderer": "^16.13.1",
     "sass-loader": "^10.0.1",
