@@ -1,6 +1,6 @@
 {
   "name": "@coopdigital/cui-react",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "description": "Coop Design System - React UI Library",
   "repository": {
     "type": "git",
@@ -53,6 +53,8 @@
     "@coopdigital/foundations-layout": "^3.1.11",
     "@coopdigital/foundations-typography": "^4.1.11",
     "@coopdigital/foundations-vars": "^3.1.5",
+    "@coopdigital/shared-component--hero": "^2.1.17",
+    "@coopdigital/shared-component--image": "^2.1.17",
     "identity-obj-proxy": "^3.0.0",
     "lint-staged": "^10.4.0",
     "prop-types": "^15.5.4",
@@ -102,7 +104,6 @@
     "jest": "^26.4.2",
     "node-sass": "^4.14.1",
     "prettier": "^2.0.5",
-    "react-docgen": "^5.3.0",
     "react-test-renderer": "^16.13.1",
     "sass-loader": "^10.0.1",
     "sort-package-json": "^1.44.0",
