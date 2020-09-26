@@ -1,3 +1,5 @@
+import "./global.scss";
+
 export { default as BlockQuote } from "./components/BlockQuote";
 export { default as Button } from "./components/Button";
 export { default as Grid } from "./components/Grid";
@@ -12,5 +14,6 @@ export { default as InputSelect } from "./components/InputSelect";
 export { default as InputText } from "./components/InputText";
 export { default as InputTextArea } from "./components/InputTextArea";
 export { default as List } from "./components/List";
+export { default as MembershipBanner } from "./components/MembershipBanner";
 export { default as ResponsiveImage } from "./components/ResponsiveImage";
 export { default as Text } from "./components/Text";

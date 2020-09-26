@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
-import uuid from "uuid";
 import { CheckboxContext } from "./InputCheckboxGroupContext";
 import "./inputCheckboxGroup.scss";
 import classNames from "../../utils/classNames";
@@ -78,7 +77,6 @@ const InputCheckboxGroup = ({
 export default InputCheckboxGroup;
 
 InputCheckboxGroup.defaultProps = {
-  id: uuid(),
   hasError: false,
   hint: null,
   errorMsg: null,
@@ -89,7 +87,7 @@ InputCheckboxGroup.defaultProps = {
 };
 
 InputCheckboxGroup.propTypes = {
-  id: PropTypes.string,
+  id: PropTypes.string.isRequired,
   legend: PropTypes.string.isRequired,
   hint: PropTypes.string,
   hasError: PropTypes.bool,

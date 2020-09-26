@@ -1,6 +1,5 @@
 import React from "react";
 import PropTypes from "prop-types";
-import uuid from "uuid";
 import classNames from "../../utils/classNames";
 
 const InputDOB = ({ id, name, label, hint, hasError, errors, refs }) => {
@@ -92,7 +91,6 @@ const InputDOB = ({ id, name, label, hint, hasError, errors, refs }) => {
 };
 
 InputDOB.defaultProps = {
-  id: uuid(),
   label: "What is your date of birth?",
   hint: "For example 21 12 2020",
   hasError: false,
@@ -103,7 +101,7 @@ InputDOB.defaultProps = {
 };
 
 InputDOB.propTypes = {
-  id: PropTypes.string,
+  id: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
   label: PropTypes.string,
   hint: PropTypes.string,

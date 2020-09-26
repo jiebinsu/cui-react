@@ -1,6 +1,5 @@
 import React, { forwardRef } from "react";
 import PropTypes from "prop-types";
-import uuid from "uuid";
 import "./inputTextArea.scss";
 
 const InputTextArea = forwardRef(
@@ -68,7 +67,6 @@ const InputTextArea = forwardRef(
 );
 
 InputTextArea.defaultProps = {
-  id: uuid(),
   cols: 30,
   rows: 4,
   className: null,
@@ -80,7 +78,7 @@ InputTextArea.defaultProps = {
 };
 
 InputTextArea.propTypes = {
-  id: PropTypes.string,
+  id: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
   cols: PropTypes.number,
   rows: PropTypes.number,

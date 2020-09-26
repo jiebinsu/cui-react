@@ -1,7 +1,17 @@
 const path = require("path");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 
 module.exports = {
   entry: "./src/index.js",
+  optimization: {
+    minimizer: [new OptimizeCSSAssetsPlugin({})],
+  },
+  plugins: [
+    new MiniCssExtractPlugin({
+      filename: "cui-react.css",
+    }),
+  ],
   module: {
     rules: [
       {
@@ -23,6 +33,9 @@ module.exports = {
         test: /\.scss$/,
         use: [
           { loader: "style-loader" },
+          {
+            loader: MiniCssExtractPlugin.loader,
+          },
           { loader: "css-loader" },
           { loader: "sass-loader" },
         ],

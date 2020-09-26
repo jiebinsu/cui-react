@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
-import uuid from "uuid";
 import { RadioContext } from "./InputRadioGroupContext";
 import "./inputRadioGroup.scss";
 
@@ -80,7 +79,6 @@ const InputRadioGroup = ({
 export default InputRadioGroup;
 
 InputRadioGroup.defaultProps = {
-  id: uuid(),
   hasError: false,
   hint: null,
   errorMsg: null,
@@ -92,7 +90,7 @@ InputRadioGroup.defaultProps = {
 };
 
 InputRadioGroup.propTypes = {
-  id: PropTypes.string,
+  id: PropTypes.string.isRequired,
   legend: PropTypes.string.isRequired,
   hint: PropTypes.string,
   hasError: PropTypes.bool,

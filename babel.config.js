@@ -21,6 +21,7 @@ module.exports = (api) => {
         test: "\\.(scss|css)$",
       },
     ]);
+    config.ignore = ["**/*.test.js", "**/*.stories.js"];
   }
 
   return config;
