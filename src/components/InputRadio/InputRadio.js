@@ -87,7 +87,7 @@ InputRadio.defaultProps = {
   className: null,
   checked: null,
   onChange: null,
-  value: null,
+  value: "",
 };
 
 InputRadio.propTypes = {

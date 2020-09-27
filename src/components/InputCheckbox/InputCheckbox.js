@@ -94,7 +94,7 @@ InputCheckbox.defaultProps = {
   className: null,
   checked: null,
   onChange: null,
-  value: null,
+  value: "",
 };
 
 InputCheckbox.propTypes = {
