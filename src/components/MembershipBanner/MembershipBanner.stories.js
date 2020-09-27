@@ -2,7 +2,7 @@ import React from "react";
 import MembershipBanner from "./MembershipBanner";
 
 export default {
-  title: "Base/Membership Banner",
+  title: "Base/MembershipBanner",
   component: MembershipBanner,
 };
 

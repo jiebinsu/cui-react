@@ -48,7 +48,7 @@
   "dependencies": {
     "@coopdigital/css-foundations": "^5.3.1",
     "@coopdigital/foundations-buttons": "^2.2.3",
-    "@coopdigital/foundations-forms": "^4.0.8",
+    "@coopdigital/foundations-forms": "^4.0.10",
     "@coopdigital/foundations-global": "^3.1.11",
     "@coopdigital/foundations-grid": "^2.0.6",
     "@coopdigital/foundations-layout": "^3.2.2",

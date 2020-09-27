@@ -1420,11 +1420,6 @@
   resolved "https://jsu-634602968812.d.codeartifact.us-east-2.amazonaws.com:443/npm/private/@coopdigital/foundations-forms/-/foundations-forms-4.0.10.tgz#063db0f895818d82bbbf19d6d3d111955235b9a1"
   integrity sha512-k9E6n/fvIyJRrghlOWStOEQM00jHXUI17hxxzLJVXl6HOB/9mmpmrzImkl3jNA9fD5FXCV3P/RNjMovRTng7aQ==
 
-"@coopdigital/foundations-forms@^4.0.8":
-  version "4.0.9"
-  resolved "https://registry.npmjs.org/@coopdigital/foundations-forms/-/foundations-forms-4.0.9.tgz#dd5f9d1f8aefe6ab17fd887e4e56e58d503a5f08"
-  integrity sha512-P/S1IVmnAP7HEoFUNmgsqN2RZqsyH0p0O826aBKctB/VTuvrHKf8B6x0mGkYOAevF1p0Q3eateFNkPj0yrFSGA==
-
 "@coopdigital/foundations-global@^3.1.11":
   version "3.1.15"
   resolved "https://registry.npmjs.org/@coopdigital/foundations-global/-/foundations-global-3.1.15.tgz#41402af72ef785a8b0bd8a8693d8b5d7b76bced9"
