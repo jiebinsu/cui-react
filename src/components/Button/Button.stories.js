@@ -44,10 +44,5 @@ export const Disabled = () => (
     <Button variant="grey" disabled>
       Grey
     </Button>
-    <Button variant="link" disabled>
-      Link
-    </Button>
   </>
 );
-
-export const Link = () => <Button variant="link">Button Link</Button>;

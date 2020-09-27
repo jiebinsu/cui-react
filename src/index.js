@@ -2,6 +2,8 @@ import "./global.scss";
 
 export { default as BlockQuote } from "./components/BlockQuote";
 export { default as Button } from "./components/Button";
+export { default as FormContainer } from "./components/FormContainer";
+export { default as FormValidation } from "./components/FormValidation";
 export { default as Grid } from "./components/Grid";
 export { default as GridItem } from "./components/GridItem";
 export { default as Hero } from "./components/Hero";
