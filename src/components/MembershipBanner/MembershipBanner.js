@@ -11,9 +11,7 @@ const MembershipBanner = ({ title, body, btn, links }) => {
           <header className="coop-c-membershipmodule__header">
             <h3 className="coop-c-membershipmodule__title">{title}</h3>
           </header>
-          <div className="coop-c-membershipmodule__body">
-            <p>{body}</p>
-          </div>
+          <div className="coop-c-membershipmodule__body">{body}</div>
           {btn && (
             <div className="coop-c-membershipmodule__btns">
               <p>

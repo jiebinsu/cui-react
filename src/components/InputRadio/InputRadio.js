@@ -87,13 +87,14 @@ InputRadio.defaultProps = {
   className: null,
   checked: null,
   onChange: null,
+  value: null,
 };
 
 InputRadio.propTypes = {
   id: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
   label: PropTypes.string.isRequired,
-  value: PropTypes.oneOfType([PropTypes.number, PropTypes.string]).isRequired,
+  value: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
   className: PropTypes.string,
   checked: PropTypes.bool,
   disabled: PropTypes.bool,

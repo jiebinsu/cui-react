@@ -22,9 +22,7 @@ exports[`MembershipBanner should render correctly 1`] = `
       <div
         className="coop-c-membershipmodule__body"
       >
-        <p>
-          Choose your offers, check your balance and help your community
-        </p>
+        Choose your offers, check your balance and help your community
       </div>
       <div
         className="coop-c-membershipmodule__links"
@@ -98,9 +96,7 @@ exports[`MembershipBanner should render with btn 1`] = `
       <div
         className="coop-c-membershipmodule__body"
       >
-        <p>
-          body
-        </p>
+        body
       </div>
       <div
         className="coop-c-membershipmodule__btns"
@@ -189,9 +185,7 @@ exports[`MembershipBanner should render with links 1`] = `
       <div
         className="coop-c-membershipmodule__body"
       >
-        <p>
-          body
-        </p>
+        body
       </div>
       <div
         className="coop-c-membershipmodule__links"
