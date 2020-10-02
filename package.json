@@ -1,7 +1,7 @@
 {
   "name": "@coopdigital/cui-react",
   "version": "0.0.1",
-  "description": "Coop Design System - React UI Library",
+  "description": "Coop Design System - Unofficial React UI Library",
   "repository": {
     "type": "git",
     "url": "https://github.com/jiebinsu/cui-react"
