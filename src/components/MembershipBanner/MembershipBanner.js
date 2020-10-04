@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import uuid from "uuid";
+import shortid from "shortid";
 import "./membershipBanner.scss";
 
 const MembershipBanner = ({ title, body, btn, links }) => {
@@ -32,7 +32,10 @@ const MembershipBanner = ({ title, body, btn, links }) => {
               <ul className="coop-c-membershipmodule__list">
                 {links.map(({ href, text }) => {
                   return (
-                    <li key={uuid()} className="coop-c-membershipmodule__item">
+                    <li
+                      key={shortid.generate()}
+                      className="coop-c-membershipmodule__item"
+                    >
                       <a
                         className="coop-c-membershipmodule__link"
                         href={href}

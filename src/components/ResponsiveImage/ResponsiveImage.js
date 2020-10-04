@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import uuid from "uuid";
+import shortid from "shortid";
 import "./responsiveImage.scss";
 
 const generateSourceMap = (sources) =>
@@ -15,7 +15,13 @@ const generateSourceMap = (sources) =>
     );
 
     const sourceProps = { type, media };
-    return <source key={uuid()} srcSet={srcSets.join(", ")} {...sourceProps} />;
+    return (
+      <source
+        key={shortid.generate()}
+        srcSet={srcSets.join(", ")}
+        {...sourceProps}
+      />
+    );
   });
 
 const ResponsiveImage = ({ src, alt, width, height, sources }) => {

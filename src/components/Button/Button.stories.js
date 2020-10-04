@@ -19,7 +19,6 @@ export const All = () => (
     </div>
     <Button variant="grey">Grey</Button>
     <Button size="small">Small</Button>
-    <Button variant="link">Link</Button>
     <Button fullWidth>Full width</Button>
     <Button isLoading>Loading</Button>
   </>
