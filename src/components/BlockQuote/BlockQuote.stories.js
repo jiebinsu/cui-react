@@ -7,7 +7,7 @@ export default {
 };
 
 export const Basic = (args) => (
-  <BlockQuote {...args}>This is a quote</BlockQuote>
+  <BlockQuote {...args}>This is a quote.</BlockQuote>
 );
 Basic.args = {
   citation: "citation",

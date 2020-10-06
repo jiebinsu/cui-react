@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import "./list.scss";
-import uuid from "uuid";
+import shortid from "shortid";
 
 const List = ({ type, items }) => {
   const typeMap = {
@@ -13,7 +13,7 @@ const List = ({ type, items }) => {
   return (
     <Tag>
       {items.map(({ content, ...props }, index) => (
-        <li key={uuid()} {...props}>
+        <li key={shortid.generate()} {...props}>
           {content}
         </li>
       ))}

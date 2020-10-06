@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import uuid from "uuid";
+import shortid from "shortid";
 
 const FormValidation = ({
   heading,
@@ -24,7 +24,7 @@ const FormValidation = ({
       <p className="coop-c-message__message">{message}</p>
       <ul className="coop-c-message__list">
         {errorLinks.map(({ href, text }) => (
-          <li key={uuid()}>
+          <li key={shortid.generate()}>
             <a className="coop-c-message__link coop-t-link" href={href}>
               {text}
             </a>
